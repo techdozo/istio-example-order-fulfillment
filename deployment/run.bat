@@ -34,4 +34,9 @@ kind load docker-image inventory-svc:1.0.0
 if %errorlevel% neq 0 exit /b %errorlevel%
 echo kind load docker-image inventory-svc:1.0.0 ran successfully
 
+echo Running: kubectl apply -f deployment\kubernetes\kube-deployment.yaml
+kubectl apply -f deployment\kubernetes\kube-deployment.yaml
+if %errorlevel% neq 0 exit /b %errorlevel%
+echo kubectl apply -f deployment\kubernetes\kube-deployment.yaml ran successfully
+
 echo All commands ran successfully!

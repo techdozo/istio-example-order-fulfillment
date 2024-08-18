@@ -16,7 +16,7 @@ public class PaymentServiceImpl implements PaymentService {
     public Payment createPayment(Order order) {
         var restClient =
                 RestClient.builder()
-                        .baseUrl(applicationProperties.getPaymentUrl())
+                        .baseUrl(applicationProperties.getPaymentUrl()+"/payments")
                         .build();
         double amount = order.getPrice() * order.getQuantity();
         Payment payment = new Payment(null, amount);
